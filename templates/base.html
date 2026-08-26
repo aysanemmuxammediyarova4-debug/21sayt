@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>GrandHotel — Xonalarni bron qilish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>GrandHotel</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Barcha xonalar</a>
+            <a href="{{ url_for('index', room_type='Standard') }}">Standard</a>
+            <a href="{{ url_for('index', room_type='Lux') }}">Lux</a>
+            <a href="{{ url_for('index', room_type='Family') }}">Family</a>
+            <a href="{{ url_for('add_room') }}" class="add-btn">+ Xona qo'shish</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

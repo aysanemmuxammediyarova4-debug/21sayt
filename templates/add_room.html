@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Yangi xona qo'shish</h2>
+<form method="POST">
+    <input type="text" name="room_number" placeholder="Xona raqami yoki nomi (masalan: 101-xona)" required><br><br>
+    
+    <select name="room_type" required>
+        <option value="">Xona toifasini tanlang</option>
+        <option value="Standard">Standard</option>
+        <option value="Lux">Lux</option>
+        <option value="Family">Family</option>
+        <option value="Deluxe">Deluxe</option>
+    </select><br><br>
+
+    <input type="number" step="1000" name="price_per_night" placeholder="Bir kunlik narxi (so'm)" required><br><br>
+    <input type="number" name="capacity" placeholder="Sig'imi (kishi soni)" required><br><br>
+    <input type="url" name="image_url" placeholder="Rasm URL-manzili" required><br><br>
+    <textarea name="description" placeholder="Xonadagi qulayliklar (Wi-Fi, konditsioner, TV va h.k.)" required></textarea><br><br>
+    
+    <button type="submit" class="btn">Saqlash</button>
+</form>
+{% endblock %}

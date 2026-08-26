@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% if selected_type %}{{ selected_type }} xonalari{% else %}Mavjud xonalar{% endif %}</h2>
+
+<div class="room-grid">
+    {% for room in rooms %}
+    <div class="card">
+        <img src="{{ room.image_url }}" alt="{{ room.room_number }}">
+        <h3>{{ room.room_number }}</h3>
+        <p><strong>Toifasi:</strong> {{ room.room_type }}</p>
+        <p><strong>Sig'imi:</strong> {{ room.capacity }} kishilik</p>
+        <p class="price">{{ room.price_per_night }} so'm / tun</p>
+        <a href="{{ url_for('room_detail', room_id=room.id) }}" class="btn">Bron qilish</a>
+    </div>
+    {% else %}
+    <p>Hozircha xonalar mavjud emas.</p>
+    {% endfor %}
+</div>
+{% endblock %}
